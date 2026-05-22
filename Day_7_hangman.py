@@ -1,4 +1,5 @@
 import random
+import os
 
 stages = [r'''
       _______
@@ -90,11 +91,16 @@ word_list = ["monkey", "raptor", "cyruss", "william", "rat", "chimp", "blimp", "
                                             "starstruck", "hangman", "america", "china", "russia", "india", "africa", "walker",
                                               "alligator", "nevada", "trickshot", "flesh", "uncle", "grandpa", "grandma", "cousin",
                                                 "wheat", "dynamite", "poetry", "write", "writhe", "drought", "famine", "conquest",
-                                                  "disease", "cylinder", "company", "trail", "trace", "spider", "fright", "emerge"]
+                                                  "disease", "cylinder", "company", "trail", "trace", "spider", "fright", "emerge",
+                                                    "slobber", "shelf", "villain", "condition", "chicken", "butt", "execution"]
 chosenWord = random.choice(word_list)
-# print(chosenWord)
 
 userLives = 6
+
+# Terminal wiping functionality
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 # Placeholder underscores
 placeholder = ""
@@ -112,6 +118,7 @@ wrongLetters = ""
 while not gameOver:
   print(f"=========== {userLives}/6 LIVES REMAINING ===========")
   userGuess = input("\nGuess a letter: ").lower()
+  clear()
 
   # Preventing repeat & improper guesses
   if userGuess in correct_letters or userGuess in incorrect_letters:
