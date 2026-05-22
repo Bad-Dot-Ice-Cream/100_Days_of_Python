@@ -1,5 +1,9 @@
 import sys, time
 import random
+import os
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def typing(text):
     for character in text:
@@ -145,6 +149,7 @@ def start_boss_fight(haveClub):
         print(f"COBRA: {cobra.health} HP\n")
 
         action = input("\nattack / guard / rest:\n> ").lower()
+        clear()
 
         if action == "attack":
             dmg = player.attack()
@@ -193,50 +198,103 @@ print('\n')
 
 choice1 = input(
     'You awaken at a crossroad, where do you want to go?\nType "left" or "right".\n>  ').lower()
+clear()
 
 
 if choice1 == "left":
-
+    print('\n')
+    print("---------------------")
+    print('Welcome to COBRA.')
+    print('Your mission is to KILL the COBRA.')
+    print('\n')
     choice2 = input(
         'As you walk you see in the distance a... table? Looking around, you sense no other prescence. ' \
         'On the table lies a single wodden club.\nType "acquire" to take it for yourself or "leave" to continue fowards.\n>  ').lower()
+    
     if choice2 == "acquire":
         haveClub = True
     else:
         haveClub = False
     
+    clear()
+    print('\n')
+    print("---------------------")
+    print('Welcome to COBRA.')
+    print('Your mission is to KILL the COBRA.')
+    print('\n')
     choice3 = input(
         'You\'ve arrived at a lake, there is an island in the center of the lake.\nType "wait" to wave a passing boat or "swim" to simply swim across.\n> ').lower()
+    clear()
 
     if choice3 == "wait":
-
+        print('\n')
+        print("---------------------")
+        print('Welcome to COBRA.')
+        print('Your mission is to KILL the COBRA.')
+        print('\n')
         choice4 = input(
             'You successfully reach the island unharmed and thank the boatman as you depart. As you venture to the island, you approach a house with three doors.\n'
         'One yellow, from which hissing can be heard from within.\n'
         'One green, from which you hear no apparent sound.\n'
-        'And one blue, from which you hearing the loud gush of running water. Which color door do you choose to enter?\n> ').lower()
+        'And one blue, from which you hear the loud gush of running water. Which color door do you choose to enter?\n> ').lower()
+        clear()
 
         if choice4 == "green":
+            print('\n')
+            print("---------------------")
+            print('Welcome to COBRA.')
+            print('Your mission is to KILL the COBRA.')
+            print('\n')
             typing('You open the door slowly, a soft crack is heard as you step inside the room. Suddenly you hear a hiss as a sharp pain pierces your side.' \
             '\nYour vision blurs and the lights fade as you fall upon the nest of the COBRA. The last thing you see is the vile creature slithering out into freedom... GAME OVER.')
 
         elif choice4 == "yellow":
+            print('\n')
+            print("---------------------")
+            print('Welcome to COBRA.')
+            print('Your mission is to KILL the COBRA.')
+            print('\n')
             fast_type('You open the door cautiously, locking eyes with the COBRA, who hisses violently at your prescence.')
             start_boss_fight(haveClub)
 
         elif choice4 == "blue":
+            print('\n')
+            print("---------------------")
+            print('Welcome to COBRA.')
+            print('Your mission is to KILL the COBRA.')
+            print('\n')
             fast_type('As you cautiously clutch the doornob for life, the sound of water grows even louder. Suddenly, the door flings open and you are cast into an underground river.' \
             '\nYou do not know where it leads, however, as your vision darkens and your lungs scream, you know you will likely not live to find out... GAME OVER.')
 
         else:
-            slow_type('You chose a door that does not exist. The stress of the decision causes your vision to blur as you collapse, clutching your heart in agony. Such a diffcult choice isn\'t for everyone after all...')
+            print('\n')
+            print("---------------------")
+            print('Welcome to COBRA.')
+            print('Your mission is to KILL the COBRA.')
+            print('\n')
+            fast_type('You chose a door that does not exist. The stress of the decision causes your vision to blur as you collapse, clutching your heart in agony. Such a diffcult choice isn\'t for everyone after all...')
 
     elif choice3 == "swim":
+        print('\n')
+        print("---------------------")
+        print('Welcome to COBRA.')
+        print('Your mission is to KILL the COBRA.')
+        print('\n')
         typing('Suddenly a massive catfish leaps onto the shoreline and comes upon you, devouring you quickly without hesitation. It is very painful, albeit fast. GAME OVER.')
 
     else:
+        print('\n')
+        print("---------------------")
+        print('Welcome to COBRA.')
+        print('Your mission is to KILL the COBRA.')
+        print('\n')
         typing('Suddenly a massive catfish leaps onto the shoreline and comes upon you, devouring you quickly without hesitation. It is very painful, albeit fast. GAME OVER.')
 
 
 else:
-    slow_type('You unexpectedly fall into a hole, from which you are unable to escape. GAME OVER.')
+    print('\n')
+    print("---------------------")
+    print('Welcome to COBRA.')
+    print('Your mission is to KILL the COBRA.')
+    print('\n')
+    fast_type('You unexpectedly fall into a hole, from which you are unable to escape. GAME OVER.')
